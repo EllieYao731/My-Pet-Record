@@ -1,0 +1,12 @@
+// silder 圖片效果
+
+let slider = document.getElementsByClassName('Slider');
+let navs = document.getElementsByClassName("navs");
+let sliderBtn = document.getElementsByClassName("sliderBtn");
+
+arrZ = ['z-50','z-100','z-150','z-200']
+
+function showSlides() {
+	for (i = 0; arrZ < slider.length; i++) {
+		// 一輪
+	}

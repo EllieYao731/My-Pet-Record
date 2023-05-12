@@ -1,0 +1,219 @@
+/* 通用可能 */
+*{
+    margin: 0;  /* 網頁預設都會有margin:8 */
+    padding: 0;
+    font-family: "YuGothic", "游ゴシック", "Noto Sans JP","Noto Sans TC", "Hiragino Sans", ヒラギノ角ゴシック, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Roboto", "Droid Sans", "Meiryo", "メイリオ", "Verdana", "ＭＳ Ｐゴシック", sans-serif;
+}
+img{
+    /* 保持原比例，會看到部分圖像，其餘隱藏*/
+    object-fit: cover;
+}
+body{
+    background-color: rgba(250, 255, 255, 1);
+    background-image:
+    /* linear-gradient(方向,顏色 (厚度), 另一個顏色 (厚度)or不做漸層)預設是從上往下 */
+    /* transparent 0 ：沒有漸層 */
+    linear-gradient(rgba(240, 235, 235, 1) 0.1em, transparent 0),
+    linear-gradient(90deg, rgba(240, 235, 235, 1) 0.1em, transparent 0); 
+    /* 逗号分隔的多个值：設置多重背景 */
+    background-size: 1.75em 1.75em;
+    width: 100vw; /* 相當於 100% */
+    height: 100vh;
+}
+main{
+    padding-top: 7.5em;
+}
+main.index{
+    padding-top: 0;
+}
+/* padding&margin 設定 */
+$derection : 'top','bottom','left','right';
+@each $i in $derection {
+    @for $j from 1 through 5{
+        .pd#{$i}#{$j}{
+            padding-#{$i}:1em * $j;
+        }
+        .pd#{$j}{
+            padding:1em * $j;
+        }
+        .mg#{$i}#{$j}{
+            margin-#{$i}:1em * $j;
+        }
+        .mg#{$j}{
+            margin:1em * $j;
+        }
+    }
+}
+
+/* z-index 設定 */
+@for $i from 1 through 20{
+    .z-#{50 * $i}{
+        z-index:50 * $i;
+    }
+}
+
+/* 往上按鈕區域 */
+.to-top{
+    background-color: rgba(160, 136, 135, 1.0);
+    /* 圓形 */
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    /* 位置 */
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    /* 固定子元素位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to-top-arr{
+    width: .25em;
+    height: 2em;
+    background-color: white;
+    border-radius:1em;
+}
+.to-top-arr:before{
+    content: "";
+    display: block;
+    transform: translate3d(-.35em, 1.1em, 0) rotate(135deg);
+    width: .25em;
+    height: 1em;
+    background-color: white;
+    border-radius:.5em;
+}
+.to-top-arr:after{
+    content: "";
+    display: block;
+    transform: translate3d(.35em, 0.1em, 0) rotate(45deg);
+    width: .25em;
+    height: 1em;
+    background-color: white;
+    border-radius:.5em;
+}
+.to-top.active{
+    animation: to-top-show .5s forwards;
+}
+.to-top.inactive{
+    animation: to-top-hide .5s reverse both;
+}
+
+@keyframes to-top-show{
+    from{
+        transform: rotate(0);
+        opacity: 0;
+    }
+    to{
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes to-top-hide{
+    from{
+        transform: rotate(0);
+        opacity: 0;
+    }
+    to{
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* 文字、字型設定 */
+@for $i from 1 through 10{
+    .fs#{$i}{
+        font-size: .5em * $i;
+    }
+}
+.text-center{
+    text-align: center;
+}
+.bold{
+    font-weight: bold;
+}
+/* 區域 block 長度設定 */
+@for $i from 1 through 10{
+    .h-#{1*$i}{
+        height: 1em * $i;
+    }
+    .h-#{10*$i}{
+        height: 10em * $i;
+    }
+    .w-#{1*$i}{
+        width: 1em * $i;
+    }
+    .w-#{10*$i}{
+        width: 10em * $i;
+    }
+}
+
+/* 寬度高度設定 */
+.wfull{
+    width: 100%;
+}
+.w50pct{
+    width: 50%;
+}
+.hfull{
+    height: 100%;
+}
+
+/* position 設定 */
+.p-re{
+    /* 相對性調整元素 */
+    position: relative;
+}
+.p-ab{
+    /* 依照有寫上 position 的 父元素 的位置去進行後續的定位動作 */
+    position: absolute;
+}
+/* display 設定 */
+.hide{
+    display: none;
+}
+.block{
+    display: block;
+}
+.flex-all-center{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* translation 區域 */
+
+.transition{
+  transition: 256ms;
+}
+.transition-512{
+  transition: 512ms;
+}
+.transition-1024{
+  transition: 1024ms;
+}
+/* Opacity 區域 */
+.opacity-1{
+    opacity: 1;
+}
+
+.opacity-0{
+    opacity: 0;
+}
+
+/* 超連結區域 */
+a:visited {
+    /* 點過後不改變顏色 */
+  color: inherit;
+}
+a:link{
+    color: inherit;
+}
+a{
+    /* 超連結不要底線*/
+    text-decoration:none;
+}
+.cursor-pointer{
+    cursor: pointer;
+}

@@ -1,0 +1,189 @@
+@media only screen and (max-width:800px){ /* Mobile */
+	.nav-btn{
+		width: 3em;
+	}
+	.navs-container{
+		width: 60%;
+	}
+	#sliderBtn-back{
+		left: 1em;
+	}
+	#sliderBtn-next{
+		right: 1em;
+	}
+}
+@media only screen and (min-width:800px){ /* PC */
+	.nav-btn{
+		width: 6em;
+	}
+	.navs-container{
+		width: 45%;
+	}
+	#sliderBtn-back{
+		left: 0;
+	}
+	#sliderBtn-next{
+		right: 0;
+	}
+}
+
+
+.slideshow-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items:center;
+	height: 50em;
+}
+
+.Slider.opacity-1 .slider-text{
+	left: 2em;
+	top: 2em;
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+	animation: text-anime 1s;
+}
+.Slider img{
+	height: inherit;
+}
+.Slider{
+	height: inherit;
+	transition: 512ms;
+}
+.Slider.opacity-1[data-anime="text-anime"]:after{
+	content: attr(data-text);
+	white-space: pre; /* 讓換行符號可以作用 */
+	position: absolute;
+	left: 2em;
+	top: 2em;
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+	z-index: 300;
+	animation: text-anime 1s;
+}
+/* 前後按鈕 */
+
+.sliderBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 7.5%;
+	height: 100%;
+}
+#sliderBtn-next:hover{
+	animation: arrRight 1s infinite;
+}
+#sliderBtn-back:hover{
+	animation: arrLeft 1s infinite;
+}
+@keyframes arrRight{
+	0%{
+		transform: translateX(0px);
+	}
+	50%{
+		transform: translateX(0.5em);
+	}
+	100%{
+		transform: translateX(0px);
+	}
+}
+@keyframes arrLeft{
+	0%{
+		transform: translateX(0px);
+	}
+	50%{
+		transform: translateX(-0.5em);
+	}
+	100%{
+		transform: translateX(0px);
+	}
+}
+.arr-btn{
+	position: absolute;
+	width: .75em;
+	height: .15em;
+}
+
+#sliderBtn-back .arr-btn::before{
+	content:"";
+	width: .75em;
+	height: .15em;
+	background-color: white;
+	border-radius:1em;
+	position: absolute;
+	transform: rotate(135deg);
+	top: -0.2em;
+}
+#sliderBtn-back .arr-btn::after{
+	content:"";
+	width: .75em;
+	height: .15em;
+	background-color: white;
+	border-radius:1em;
+	position: absolute;
+	bottom: -0.2em;
+	transform: rotate(45deg);
+}
+
+#sliderBtn-next .arr-btn::before{
+	content:"";
+	width: .75em;
+	height: .15em;
+	background-color: white;
+	border-radius:1em;
+	position: absolute;
+	top: -0.2em;
+	transform: rotate(45deg);
+}
+#sliderBtn-next .arr-btn::after{
+	content:"";
+	width: .75em;
+	height: .15em;
+	background-color: white;
+	border-radius:1em;
+	position: absolute;
+	bottom: -0.2em;
+	transform: rotate(135deg);
+}
+
+/* 底層按鈕 */
+
+.navs-container{
+	display: flex;
+	justify-content: space-around;
+	align-items:center;
+	height: 3em;
+/*	width: 50%;*/
+	bottom: 0;
+}
+
+.navs{
+	height: inherit;
+  	width: 5em;
+	display: flex;
+	justify-content: space-around;
+	align-items:center;
+}
+
+.nav-btn{
+	height: .15em;
+  	border-radius: .1em;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.navs.slider-nav-active .nav-btn{
+	background-color: rgba(255, 255, 255, 1);
+}
+
+/* Slider 上元件移動動畫 */
+
+@keyframes text-anime{
+	from{
+		transform: translateX(10px);
+	}
+	to{
+		transform: translateX(0px);
+	}
+}

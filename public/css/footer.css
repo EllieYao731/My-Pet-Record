@@ -1,0 +1,21 @@
+footer{
+	display: flex;
+	flex-direction: column;
+    flex-wrap: wrap;
+	height: 50em;
+	background-color: rgba(191, 176, 168 ,1);
+}
+.sns_link{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.sns_link img{
+	width: inherit;
+	height: inherit;
+}
+/*.mask_logo[data-sns=""]{
+	mask-image: url(w3logo.png);
+	mask-repeat: no-repeat;
+}*/

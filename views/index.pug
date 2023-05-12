@@ -1,0 +1,35 @@
+extend layout
+
+block content
+  main.index
+    link(rel='stylesheet', href='/css/slider.css')
+    //- data-*：自訂一個非標準的 attributes，在 HTML 以 data- 開頭的可以在 JS 裡面用 dataset 拿到
+    .slideshow-container.wfull.p-re
+      a.Slider.wfull.p-ab.transition-512(style="top:0;",href="#", data-text="a", data-delay="0", data-anime="text-anime")
+        // .slider-text.p-ab.z-300 Hello
+        img.wfull(src='img/banner1.png')
+      a.Slider.wfull.p-ab.transition-512(style="top:0;",href="#", data-text="b", data-delay="0", data-anime="text-anime")
+        img.wfull(src='img/banner2.png')
+      a.Slider.wfull.p-ab.transition-512(style="top:0;",href="#", data-text="c", data-delay="0", data-anime="text-anime")
+        img.wfull(src='img/banner3.png')
+      // 若需要新增照片，新增 html 即可
+      a.Slider.wfull.p-ab.transition-512(style="top:0;",href="#", data-text="d", data-delay="0", data-anime="text-anime")
+        img.wfull(src='img/banner4.png')
+
+      #sliderBtn-back.sliderBtn.cursor-pointer.z-300.p-ab(data-action='back')
+        .arr-btn
+      #sliderBtn-next.sliderBtn.cursor-pointer.p-ab.z-300(data-action='next')
+        .arr-btn
+      .navs-container.p-ab
+        .navs.cursor-pointer.z-300.transition-512(data-id='1')
+          .nav-btn
+        .navs.cursor-pointer.z-300.transition-512(data-id='2')
+          .nav-btn
+        .navs.cursor-pointer.z-300.transition-512(data-id='3')
+          .nav-btn
+        // 若需要新增照片，新增 html 即可
+        .navs.cursor-pointer.z-300.transition-512(data-id='4')
+          .nav-btn
+    .h-80
+      h1 test
+    script(type='text/javascript', src='/js/silder.js')

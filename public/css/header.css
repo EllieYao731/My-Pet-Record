@@ -68,7 +68,7 @@ header{
 	justify-content: space-between;
 	position: fixed;
 }
-#menu a:before{
+.menu-item a:before{
 	content: "";
 	position: absolute;
 	background-color: transparent;
@@ -77,11 +77,11 @@ header{
 	z-index: -5;
 	transition: 0.2s 
 }
-#menu a:hover:before{
+.menu-item a:hover:before{
 	content: "";
 	position: absolute;
 	background-color: white;
-	width: inherit;
+	width: 8em;
 	height: 1.5em;
 	z-index: -5;
 	transition: 0.2s;
@@ -89,13 +89,35 @@ header{
 #lang-block{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 }
 .lang-icon{
-	border-style: solid;
-	border-width: .1em;
+	border: .1em solid black;
 	border-radius: 50%;
-	border-color: black;
+	transform: scale(0.7);
+}
+
+.lang-icon:hover{
+	animation:rotate .075s ease-in forwards;
+	color:rgba(191, 176, 168 ,1);
+}
+
+@keyframes rotate{
+	0%{
+		border-top: .1em solid rgba(191, 176, 168 ,1);
+	}
+	40%{
+		border-right: .1em solid rgba(191, 176, 168 ,1);
+	}
+	50%{
+		border-bottom: .1em solid rgba(191, 176, 168 ,1);
+	}
+	75%{
+		border-left: .1em solid rgba(191, 176, 168 ,1);
+	}
+	100%{
+		border: .1em solid rgba(191, 176, 168 ,1);
+	}
 }
 
 #SPmenuBtn{

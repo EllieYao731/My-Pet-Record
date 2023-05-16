@@ -10,14 +10,20 @@ block content
           img.wfull(src=slider.img)
           //- 新增時去 data.json 新增即可
 
-      .navs-container.p-ab
-         each val, index in data.slider
-          .navs.cursor-pointer.z-300.transition-512(data-id=index+1)
-            .nav-btn
-
       #sliderBtn-back.sliderBtn.cursor-pointer.z-300.p-ab(data-action='back')
         .arr-btn
       #sliderBtn-next.sliderBtn.cursor-pointer.p-ab.z-300(data-action='next')
         .arr-btn
-
+      .navs-container.p-ab
+        .navs.cursor-pointer.z-300.transition-512(data-id='1')
+          .nav-btn
+        .navs.cursor-pointer.z-300.transition-512(data-id='2')
+          .nav-btn
+        .navs.cursor-pointer.z-300.transition-512(data-id='3')
+          .nav-btn
+        // 若需要新增照片，新增 html 即可
+        .navs.cursor-pointer.z-300.transition-512(data-id='4')
+          .nav-btn
+    .h-80
+      h1 #{data.slider.length}
     script(type='text/javascript', src='/js/silder.js')

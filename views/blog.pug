@@ -4,10 +4,10 @@ block content
   main
     h1.pdleft1 ℬ𝓁𝑜𝑔
     .h-40.mg3.pdleft1(style="border-left: 2px solid black;")
-      each blog in data.blog
+      each blog in lang.blog
         .blog.h-10
           .blog-title(style="display:flex;align-items: baseline;")
             h3=blog.title
             .fs1.pdleft1=blog.date
           .blog-content.wd-break
-            p.text-to-html=blog.content
+            p.text-to-html(content=blog.content)=blog.content

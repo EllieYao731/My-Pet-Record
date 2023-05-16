@@ -430,122 +430,152 @@ main.index {
 .h-1 {
   height: 1em; }
 
-.h-10 {
-  height: 10em; }
-
 .w-1 {
   width: 1em; }
-
-.w-10 {
-  width: 10em; }
 
 .h-2 {
   height: 2em; }
 
-.h-20 {
-  height: 20em; }
-
 .w-2 {
   width: 2em; }
-
-.w-20 {
-  width: 20em; }
 
 .h-3 {
   height: 3em; }
 
-.h-30 {
-  height: 30em; }
-
 .w-3 {
   width: 3em; }
-
-.w-30 {
-  width: 30em; }
 
 .h-4 {
   height: 4em; }
 
-.h-40 {
-  height: 40em; }
-
 .w-4 {
   width: 4em; }
-
-.w-40 {
-  width: 40em; }
 
 .h-5 {
   height: 5em; }
 
-.h-50 {
-  height: 50em; }
-
 .w-5 {
   width: 5em; }
-
-.w-50 {
-  width: 50em; }
 
 .h-6 {
   height: 6em; }
 
-.h-60 {
-  height: 60em; }
-
 .w-6 {
   width: 6em; }
-
-.w-60 {
-  width: 60em; }
 
 .h-7 {
   height: 7em; }
 
-.h-70 {
-  height: 70em; }
-
 .w-7 {
   width: 7em; }
-
-.w-70 {
-  width: 70em; }
 
 .h-8 {
   height: 8em; }
 
-.h-80 {
-  height: 80em; }
-
 .w-8 {
   width: 8em; }
-
-.w-80 {
-  width: 80em; }
 
 .h-9 {
   height: 9em; }
 
-.h-90 {
-  height: 90em; }
-
 .w-9 {
   width: 9em; }
-
-.w-90 {
-  width: 90em; }
 
 .h-10 {
   height: 10em; }
 
-.h-100 {
-  height: 100em; }
-
 .w-10 {
   width: 10em; }
 
-.w-100 {
-  width: 100em; }
+.h-12 {
+  height: 12em; }
+
+.w-12 {
+  width: 12em; }
+
+.h-14 {
+  height: 14em; }
+
+.w-14 {
+  width: 14em; }
+
+.h-16 {
+  height: 16em; }
+
+.w-16 {
+  width: 16em; }
+
+.h-18 {
+  height: 18em; }
+
+.w-18 {
+  width: 18em; }
+
+.h-20 {
+  height: 20em; }
+
+.w-20 {
+  width: 20em; }
+
+.h-22 {
+  height: 22em; }
+
+.w-22 {
+  width: 22em; }
+
+.h-24 {
+  height: 24em; }
+
+.w-24 {
+  width: 24em; }
+
+.h-26 {
+  height: 26em; }
+
+.w-26 {
+  width: 26em; }
+
+.h-28 {
+  height: 28em; }
+
+.w-28 {
+  width: 28em; }
+
+.h-30 {
+  height: 30em; }
+
+.w-30 {
+  width: 30em; }
+
+.h-32 {
+  height: 32em; }
+
+.w-32 {
+  width: 32em; }
+
+.h-34 {
+  height: 34em; }
+
+.w-34 {
+  width: 34em; }
+
+.h-36 {
+  height: 36em; }
+
+.w-36 {
+  width: 36em; }
+
+.h-38 {
+  height: 38em; }
+
+.w-38 {
+  width: 38em; }
+
+.h-40 {
+  height: 40em; }
+
+.w-40 {
+  width: 40em; }
 
 /* 寬度高度設定 */
 .wfull {
@@ -609,3 +639,6 @@ a {
 
 .cursor-pointer {
   cursor: pointer; }
+
+.wd-break {
+  word-wrap: break-word; }

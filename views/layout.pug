@@ -7,9 +7,10 @@ html
     link(rel="icon" href="/img/favicon.ico")
     link(rel='stylesheet', href='/css/header.css')
     link(rel='stylesheet', href='/css/base.css')
+    link(rel='stylesheet', href='/css/footer.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
   body
-    script(type='text/javascript', src='/js/common.js')
+    script(type='text/javascript', src='/js/base.js')
     header.transition.z-500
       div.title.w50pct
         a.f1_25em.padle1em(href="/") #{lang.logo_img}
@@ -17,17 +18,14 @@ html
       //- 黑屏
       #bg-dark.z-400
       #menu-block.menu-close.z-600
-        #lang-block.w-10
-          a.lang-icon.w-2.h-2.flex-all-center(href="/tw/") TW
-          a.lang-icon.w-2.h-2.flex-all-center(href="ja/") JA
-          a.lang-icon.w-2.h-2.flex-all-center(href="/en/") EN
-        #menu.p-re
-          .menu-item.f1em
-            a.f1_25em(href='/') HomePage
-          .menu-item.f1em
-            a.f1_25em(href='/about') About
-          .menu-item.f1em
-            a.f1_25em(href='#') Contact
+        #lang-block.w-full.p-re.pdleft2
+          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/tw/") 𝕋𝕎
+          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/ja/") 𝕁𝔸
+          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/en/") 𝔼ℕ
+        #menu.p-re.pdright5.pdleft2
+          each navi in data.navigation
+            .menu-item.f1em
+              a.f1_25em(href=navi.page)=navi.title
 
       //- SP Menu 彈出
       #SPmenuBtn.z-700(onclick='SPMenuBtn()', data-item='SPmenuBtn')
@@ -38,20 +36,11 @@ html
     a.to-top.flex-all-center.inactive(href="javascript:void();")
       .to-top-arr
 
-    footer.pd2
-      link(rel='stylesheet', href='/css/footer.css')
-      .sns_link.w-10.h-3
-        a.mask_logo.mask_logo.text-center.w-2.h-2(href="https://www.instagram.com/", target="_blank", data-sns="instagram")
-          //- masking test
-          img("img/icon/instagram.png")
-          .test(style="background-color:white;")
-        a.mask_logo.text-center.w-2.h-2(href="https://www.facebook.com/", target="_blank", data-sns="facebook")
-         //- "img/icon/facebook.png")
-          .test(style="background-color:white;")
-        a.mask_logo.text-center.w-2.h-2(href="https://www.youtube.com/", target="_blank", data-sns="youtube")
-         //- "img/icon/youtube.png")
-          .test(style="background-color:white;")
-        a.mask_logo.text-center.w-2.h-2(href="https://twitter.com/", target="_blank", data-sns="twitter")
-         //- "img/icon/twitter.png")
-          .test(style="background-color:white;")
+    footer.pd1
+      .sns_link.w-12.h-3
+        each sns in data.sns
+          a.text-center.w-2.h-2(href=sns.url, target="_blank")
+            //- 不知道為什麼不能用 inherit
+            .sns-mask(data-sns=sns.name, style="-webkit-mask-repeat: no-repeat; -webkit-mask-size: 2em;") 
+              .transition
       .h-8.wfull

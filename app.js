@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var favicon = require('serve-favicon');
 var fs = require('fs');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -15,7 +14,7 @@ var compileSass = require('express-compile-sass');
 
 // 將 routes 中設定的路徑引進來
 var indexRouter = require('./routes/index');
-var enRouter = require('./routes/en');
+// var enRouter = require('./routes/en');
 
 var app = express();
 

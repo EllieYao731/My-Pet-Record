@@ -138,17 +138,22 @@ $derection : 'top','bottom','left','right';
     .h-#{1*$i}{
         height: 1em * $i;
     }
-    .h-#{10*$i}{
-        height: 10em * $i;
-    }
     .w-#{1*$i}{
         width: 1em * $i;
     }
-    .w-#{10*$i}{
-        width: 10em * $i;
+}
+@for $i from 11 through 40{
+    @if $i % 2 == 0 {
+        .h-#{1*$i}{
+            height: 1em * $i;
+        }
+    }
+    @if $i % 2 == 0 {
+        .w-#{1*$i}{
+            width: 1em * $i;
+        }
     }
 }
-
 /* 寬度高度設定 */
 .wfull{
     width: 100%;
@@ -216,4 +221,7 @@ a{
 }
 .cursor-pointer{
     cursor: pointer;
+}
+.wd-break{
+    word-wrap: break-word;
 }

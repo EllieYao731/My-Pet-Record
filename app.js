@@ -26,7 +26,7 @@ app.set('view engine', 'pug');
 // sass&scss 編譯區域
 app.use(
   sassMiddleware({
-    src: path.join(__dirname,'public'), 
+    src: path.join(__dirname,'public'),
     dest: path.join(__dirname,'public'),
     debug: true,
   })

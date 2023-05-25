@@ -5,7 +5,7 @@
     font-family: "YuGothic", "游ゴシック", "Noto Sans JP","Noto Sans TC", "Hiragino Sans", ヒラギノ角ゴシック, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Roboto", "Droid Sans", "Meiryo", "メイリオ", "Verdana", "ＭＳ Ｐゴシック", sans-serif;
 }
 img{
-    /* 保持原比例，會看到部分圖像，其餘隱藏*/
+    /* 保持原比例，會看到部分圖像，其餘隱藏 */
     object-fit: cover;
 }
 body{
@@ -123,7 +123,7 @@ $derection : 'top','bottom','left','right';
 
 /* 文字、字型設定 */
 @for $i from 1 through 10{
-    .fs#{$i}{
+    .fs#{0.5*$i*10}{
         font-size: .5em * $i;
     }
 }
@@ -181,11 +181,22 @@ $derection : 'top','bottom','left','right';
 .block{
     display: block;
 }
-.flex-all-center{
+.f-all-center{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
+.f{
+    display: flex;
+}
+.f-col{
+    display: flex;
+    flex-direction: column
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+
 
 /* translation 區域 */
 
@@ -224,4 +235,30 @@ a{
 }
 .wd-break{
     word-wrap: break-word;
+}
+
+/* SmartPhone */
+
+@media only screen and (max-width:800px){
+    @for $i from 1 through 10{
+        .s-fs#{0.5*$i*10}{
+            font-size: .5em * $i;
+        }
+    }
+    @each $i in $derection {
+        @for $j from 1 through 5{
+            .s-pd#{$i}#{$j}{
+                padding-#{$i}:1em * $j;
+            }
+            .s-pd#{$j}{
+                padding:1em * $j;
+            }
+            .s-mg#{$i}#{$j}{
+                margin-#{$i}:1em * $j;
+            }
+            .s-mg#{$j}{
+                margin:1em * $j;
+            }
+        }
+    }
 }

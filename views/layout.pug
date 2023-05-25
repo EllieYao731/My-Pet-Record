@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title MyWebsite
+    title #{data.title}
     link(rel="icon" href="/img/favicon.ico")
     link(rel='stylesheet', href='/css/header.css')
     link(rel='stylesheet', href='/css/base.css')
@@ -13,19 +13,19 @@ html
     script(type='text/javascript', src='/js/base.js')
     header.transition.z-500
       div.title.w50pct
-        a.f1_25em.padle1em(href="/") #{lang.logo_img}
+        a.f1_25em.padle1em(href="/") #{data.logo_img}
 
       //- 黑屏
       #bg-dark.z-400
       #menu-block.menu-close.z-600
         #lang-block.w-full.p-re.pdleft2
-          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/tw/") 𝕋𝕎
-          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/ja/") 𝕁𝔸
-          a.lang-icon.transition.w-2.p-re.h-2.flex-all-center(href="/en/") 𝔼ℕ
+          a.lang-icon.transition.w-2.p-re.h-2.f-all-center(href="/tw/") 𝕋𝕎
+          a.lang-icon.transition.w-2.p-re.h-2.f-all-center(href="/ja/") 𝕁𝔸
+          a.lang-icon.transition.w-2.p-re.h-2.f-all-center(href="/en/") 𝔼ℕ
         #menu.p-re.pdright5.pdleft2
           each navi in data.navigation
-            .menu-item.f1em
-              a.f1_25em(href=navi.page)=navi.title
+            .menu-item.fs10.s-fs15
+              a(href=navi.link)=navi.label
 
       //- SP Menu 彈出
       #SPmenuBtn.z-700(onclick='SPMenuBtn()', data-item='SPmenuBtn')
@@ -33,14 +33,16 @@ html
     //- 給各個網頁放各自區域
     block content
 
-    a.to-top.flex-all-center.inactive(href="javascript:void();")
+    a.to-top.f-all-center.inactive(href="javascript:void();")
       .to-top-arr
 
     footer.pd1
       .sns_link.w-12.h-3
-        each sns in data.sns
+        each sns in data.footer.sns
           a.text-center.w-2.h-2(href=sns.url, target="_blank")
             //- 不知道為什麼不能用 inherit
             .sns-mask(data-sns=sns.name, style="-webkit-mask-repeat: no-repeat; -webkit-mask-size: 2em;") 
               .transition
-      .h-8.wfull
+      .h-8.wfull.f-col.f-wrap(style="justify-content: space-evenly;")
+        each link in data.footer.links
+          a.h-3(href=link.link)=link.label

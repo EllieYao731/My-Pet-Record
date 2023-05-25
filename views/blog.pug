@@ -2,12 +2,18 @@ extend layout
 
 block content
   main
-    h1.pdleft1 ℬ𝓁𝑜𝑔
-    .h-40.mg3.pdleft1(style="border-left: 2px solid black;")
-      each blog in lang.blog
-        .blog.h-10
-          .blog-title(style="display:flex;align-items: baseline;")
-            h3=blog.title
-            .fs1.pdleft1=blog.date
-          .blog-content.wd-break
-            p.text-to-html(content=blog.content)=blog.content
+    .title.pdleft1
+      h1 ℬ𝓁𝑜𝑔
+      .search
+        input(placeholder="想找什麼樣的文章呢...")
+    .h-40.mgright5.mgleft5.mgtop3.mgbottom3.s-mg2.pdleft1(style="border-left: 2px solid black;")
+      each blog in data.blog
+        .blog.h-10.f(style="justify-content: space-between;")
+          .blog-text.mgright1
+            .blog-title.f(style="align-items: baseline;")
+              h3=blog.title
+              .fs1.pdleft1=blog.date
+            .blog-content.wd-break
+              p.text-to-html(content=blog.content)=blog.content
+          .blog-img
+            img.w-7.h-7(src=blog.img)

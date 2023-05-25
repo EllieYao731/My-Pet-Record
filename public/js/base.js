@@ -103,10 +103,6 @@ window.onload = (event) => {
 
 	var text_to_html = $(".text-to-html")
 	text_to_html.each(function(index) {
-		console.log($(this));
-		console.log($(this).text())
-		console.log($(this).html())
 		$(this).html($(this).text())
-		console.log($(this).html())
 	});
 }
